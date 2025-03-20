@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./fonts.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+.container{
+  max-width: 1200px !important;
+  margin: 0 auto;
+}
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+.ori-breadcrumbs-section {
+  position: relative;
+  background: #0d0d0d;
+  color: white;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.line-animation {
+  position: absolute;
+  top: 0;
+  left: 44%;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.line-area {
+  width: 12.5%;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  border-right: 1px solid #1c1c1ca9;
+}
+
+.line {
+  width: 1px;
+  right: -1px;
+  height: 50px;
+  position: absolute;
+  background-image: linear-gradient(0deg, #ffffffdc, transparent);
+}
+
+.line.even {
+  animation: line-animation 20s ease-out infinite;
+}
+
+.line.odd {
+  animation: line-animation-2 20s ease-out infinite;
+}
+
+@keyframes line-animation {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes line-animation-2 {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  50% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 1;
+  }
+}
+
+
+hr{
+  border: .2px solid #ccccccdf;
+}
+
+.zoom-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  height: 299px;
+  cursor: pointer;
+}
+.c_z .zoom-wrapper img {
+  object-fit: cover;
+  transition: transform 0.4s;
+  height: 100%;
+}
+
+/* Rasm hover qilinganda scale qilish */
+.c_z .zoom-wrapper:hover img,
+.c_z:hover .zoom-wrapper img {
+  transform: scale(1.1);
+}
+
